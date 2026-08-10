@@ -46,8 +46,7 @@ Repo id: `1.51-amoled-466x466-qspi-co5300`
 
 <p align="center"><img alt="AM151Q466466LK" src="./images/AM151Q466466LK.png" width="320" /></p>
 
-**Notes:** Module.
-
+**Notes:** With touch (CST820).
 ---
 
 ## How to Switch Branches
