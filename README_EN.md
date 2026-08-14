@@ -18,7 +18,6 @@
 - [About](#about)
 - [Versions](#versions)
 - [AM151Q466466LK](#am151q466466lk)
-- [How to Switch Branches](#how-to-switch-branches)
 - [Where to Buy](#where-to-buy)
 - [Support](#support)
 
@@ -28,7 +27,7 @@
 
 This repository holds materials for the **1.51″ 466×466 AMOLED (QSPI · CO5300)** module family.
 
-**`main` is the navigation page** (repository default). Use the table below for a quick scan; click **Details** to jump to the section on this page. For a given version’s full content, switch to that **version branch** (see below).
+The **root README is the navigation page**. Use the table below for a quick scan; open **Full docs** to enter that **part-number folder** under `versions/` (product page, datasheets, and examples live there).
 
 Repo id: `1.51-amoled-466x466-qspi-co5300`
 
@@ -36,26 +35,19 @@ Repo id: `1.51-amoled-466x466-qspi-co5300`
 
 ## Versions
 
-| Version | Image | Notes |
-| ------- | ----- | ----- |
-| AM151Q466466LK | <img alt="AM151Q466466LK" src="./images/AM151Q466466LK.png" width="120" /> | [Details](#am151q466466lk) |
+| Version | Image | Summary | Full docs |
+| ------- | ----- | ------- | --------- |
+| AM151Q466466LK | <img alt="AM151Q466466LK" src="./versions/AM151Q466466LK/images/product.png" width="120" /> | [Summary](#am151q466466lk) | [Full docs](./versions/AM151Q466466LK/) |
 
 ---
 
 ## AM151Q466466LK
 
-<p align="center"><img alt="AM151Q466466LK" src="./images/AM151Q466466LK.png" width="320" /></p>
+<p align="center"><img alt="AM151Q466466LK" src="./versions/AM151Q466466LK/images/product.png" width="320" /></p>
 
 **Notes:** With touch (CST820).
 
----
-
-## How to Switch Branches
-
-Full product materials are on each **version branch**; `main` is navigation only.
-
-- **Web:** open the branch dropdown at the top left of the repository page and select the branch that matches your part number.
-- **CLI:** after cloning, run `git checkout <version-branch>`; if the repo is already local, `git fetch` first, then switch.
+Full product page, datasheets, and examples: [versions/AM151Q466466LK/](./versions/AM151Q466466LK/)
 
 ---
 
