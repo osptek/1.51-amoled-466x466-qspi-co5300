@@ -19,6 +19,7 @@
 
 - [Overview](#overview)
 - [Specifications](#specifications)
+- [Prebuilt firmware](#prebuilt-firmware)
 - [Sample projects](#sample-projects)
 - [Repository layout](#repository-layout)
 - [Resources](#resources)
@@ -48,6 +49,38 @@ Current module version: **AM151Q466466LK**. Electrical and mechanical details fo
 
 > Full outline, FPC definition, power, and timing follow the product datasheet / driver IC datasheet.
 
+## Prebuilt firmware
+
+Flash the merged image below to verify display and touch without building ESP-IDF.
+
+**Intended hardware:** this module (AM151Q466466LK) + the **ESP32-S3 Demo board**. Other MCUs / wiring need a different firmware or your own port.
+
+| Base board (ESP32-S3 Demo) | Assembled |
+| -------------------------- | --------- |
+| <img alt="ESP32-S3 Demo board" src="./images/esp32-s3-demo-board.png" width="280" /> | <img alt="Module plugged into S3 Demo board" src="./images/assembled.png" width="280" /> |
+
+**Pin map**
+
+| Function | GPIO |
+| -------- | ---- |
+| LCD CS | 14 |
+| LCD PCLK (CLK) | 9 |
+| LCD DATA0 | 10 |
+| LCD DATA1 | 11 |
+| LCD DATA2 | 12 |
+| LCD DATA3 | 13 |
+| LCD RST | 15 |
+| TOUCH SCL | 42 |
+| TOUCH SDA | 41 |
+| TOUCH RST | 40 |
+| TOUCH INT | 39 |
+
+| File | Address | Notes |
+| ---- | ------- | ----- |
+| [`firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin`](./firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin) | `0x0` (merged) | Bringup for the S3 Demo board + this module |
+
+> Flash the merged image at **`0x0`**, not `0x10000`.
+
 ## Sample projects
 
 | Description | Path |
@@ -69,6 +102,7 @@ Current module version: **AM151Q466466LK**. Electrical and mechanical details fo
         ├── README_EN.md
         ├── images/
         ├── docs/
+        ├── firmware/
         └── examples/
 ```
 
@@ -84,6 +118,7 @@ Current module version: **AM151Q466466LK**. Electrical and mechanical details fo
 | Init sequence (text) | [`docs/BOE1.508_466x466_CO5300_AMOLED_QSPI 简码.txt`](./docs/BOE1.508_466x466_CO5300_AMOLED_QSPI%20%E7%AE%80%E7%A0%81.txt) |
 | 1.51″ AMOLED adapter board | [`docs/PCB-1.51寸AMOLED屏转接板.pdf`](./docs/PCB-1.51%E5%AF%B8AMOLED%E5%B1%8F%E8%BD%AC%E6%8E%A5%E6%9D%BF.pdf) |
 | Connector datasheet (OK-14F024-04) | [`docs/OK-14F024-04.pdf`](./docs/OK-14F024-04.pdf) |
+| Prebuilt firmware (ESP32-S3 merged) | [`firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin`](./firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin) |
 
 ### Samples
 

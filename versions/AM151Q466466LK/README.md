@@ -19,6 +19,7 @@
 
 - [产品简介](#产品简介)
 - [规格参数](#规格参数)
+- [预编译固件](#预编译固件)
 - [示例工程](#示例工程)
 - [仓库结构](#仓库结构)
 - [相关资料](#相关资料)
@@ -48,6 +49,38 @@ OSPTEK **1.51 寸 466×466 AMOLED** 是一款 **QSPI** 接口彩色显示模组�
 
 > 完整外形尺寸、FPC 定义、供电与时序以产品规格书 / 驱动手册为准。
 
+## 预编译固件
+
+不装 ESP-IDF 时可先烧录下面合并包，验证显示与触摸。
+
+**建议适配组合：** 本模组（AM151Q466466LK）+ **ESP32-S3 Demo 板**。其它主控 / 接线需自行改固件或源码。
+
+| 底板（ESP32-S3 Demo） | 插接示意 |
+| -------------------- | -------- |
+| <img alt="ESP32-S3 Demo 板" src="./images/esp32-s3-demo-board.png" width="280" /> | <img alt="模组插接在 S3 Demo 板上" src="./images/assembled.png" width="280" /> |
+
+**引脚定义**
+
+| 功能 | GPIO |
+| ---- | ---- |
+| LCD CS | 14 |
+| LCD PCLK (CLK) | 9 |
+| LCD DATA0 | 10 |
+| LCD DATA1 | 11 |
+| LCD DATA2 | 12 |
+| LCD DATA3 | 13 |
+| LCD RST | 15 |
+| TOUCH SCL | 42 |
+| TOUCH SDA | 41 |
+| TOUCH RST | 40 |
+| TOUCH INT | 39 |
+
+| 文件 | 烧录地址 | 说明 |
+| ---- | -------- | ---- |
+| [`firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin`](./firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin) | `0x0`（合并包） | 适配上方 S3 Demo 板 + 本模组的 bringup |
+
+> 合并包请烧到 **`0x0`**，不要当成应用分区去烧 `0x10000`。
+
 ## 示例工程
 
 | 说明 | 路径 |
@@ -69,6 +102,7 @@ OSPTEK **1.51 寸 466×466 AMOLED** 是一款 **QSPI** 接口彩色显示模组�
         ├── README_EN.md
         ├── images/
         ├── docs/
+        ├── firmware/
         └── examples/
 ```
 
@@ -84,6 +118,7 @@ OSPTEK **1.51 寸 466×466 AMOLED** 是一款 **QSPI** 接口彩色显示模组�
 | 初始化序列（文本） | [`docs/BOE1.508_466x466_CO5300_AMOLED_QSPI 简码.txt`](./docs/BOE1.508_466x466_CO5300_AMOLED_QSPI%20%E7%AE%80%E7%A0%81.txt) |
 | 1.51 寸 AMOLED 转接板 | [`docs/PCB-1.51寸AMOLED屏转接板.pdf`](./docs/PCB-1.51%E5%AF%B8AMOLED%E5%B1%8F%E8%BD%AC%E6%8E%A5%E6%9D%BF.pdf) |
 | 连接器规格书（OK-14F024-04） | [`docs/OK-14F024-04.pdf`](./docs/OK-14F024-04.pdf) |
+| 预编译固件（ESP32-S3 合并包） | [`firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin`](./firmware/esp32s3-1.51-amoled-466x466-qspi-co5300-bringup.bin) |
 
 ### 示例工程
 
